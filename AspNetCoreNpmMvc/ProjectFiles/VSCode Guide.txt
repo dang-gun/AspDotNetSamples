@@ -1,0 +1,41 @@
+﻿https://docs.microsoft.com/ko-kr/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-6.0&tabs=visual-studio-code
+
+1. 필수 설치
+확장 : C# - https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
+SDK : .NET 6.0 SDK - https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+
+--닷넷 버전 확인
+dotnet --info 
+
+
+
+2. 프로젝트 로드하기
+터미널을 열고 작업한다.
+
+1) 경로 이동
+- "*.csproj"파일이 있는 상위 경로로 이동해야 한다.
+- VSCode는 폴더 기준으로 작업하기 때문
+
+cd [프로젝트 경로]
+e.g. cd D:\work\project\vs\ToVsCodeTest\
+
+
+
+2) 프로젝트 로드
+code -r [프로젝트 명]
+e.g. code -r ToVsCodeTest
+
+빌드 및 디버그 자산이 없다는 메시지가 나오면 "예"를 눌러 추가한다.
+
+
+
+3. 프로젝트 실행
+
+1) 실행 및 디버그 버튼 누르기
+
+2) 디버깅 없이 실행
+Ctrl+F5
+
+3) 인증서가 없음 오류가 나면
+dotnet dev-certs https --trust
+명령을 사용하여 생성한다.

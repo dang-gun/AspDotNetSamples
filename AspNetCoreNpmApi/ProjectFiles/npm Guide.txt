@@ -1,0 +1,39 @@
+﻿0. Node.js 설치
+
+
+1. 비주얼 스튜디오에서는 
+1) 확장 > 확장관리 > 'NPM Task Runner'를 설치한 후
+2) 'package.json'을 생성/편집 한다음
+3) 'package.json'에서 오른쪽 클릭을 하고 '작업 러너 탐색기'를 선택하여
+4) UI로 작업할 수 있다.
+
+
+0-1. 패키지 업데이트
+이전 버전에 의한 경고가 뜬다면 다음 명령어로 픽스를 시도해 볼수 있다.
+--To address issues that do not require attention, run:
+npm audit fix
+--To address all issues (including breaking changes), run:
+npm audit fix --force
+
+https://overreacted.io/npm-audit-broken-by-design/
+
+
+2. VSCode에서는
+직접 터미널을 이용한다.
+
+--패키지 파일 변경시 인스톨
+npm install
+
+
+--개발용 빌드
+npm run build
+
+
+--배포용 빌드
+npm run production
+
+--변경 감지
+npm run watch
+
+
+
