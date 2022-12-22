@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ASP.NET Core 6 - Jwt Auth Test</title>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	로그(Log)<br />
+
+	<button onclick="SuccessCall()">무조건 성공</button><br />
+	<br />
+	<br />
+	<input type="text" id="txtSignName" value="test01" />
+	<input type="password" id="txtPassword" value="1111" /><br />
+	<button onclick="SignInCall()">사인인</button><br />
+	<br />
+	<br />
+	<button onclick="SignInfoCall()">사인 인포</button><br />
+
+	<script>
+		function SuccessCall()
+		{
+			$.ajax({
+				url: "api/Test/SuccessCall",
+				type: "GET",
+				success: function (data)
+				{
+					console.log(data);
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+		function SignInCall()
+		{
+			$.ajax({
+				url: "api/Sign/SignIn",
+				type: "PUT",
+				data: {
+					sSignName: $("#txtSignName").val(),
+					sPassword: $("#txtPassword").val(),
+				},
+				success: function (data)
+				{
+					console.log(data);
+					alert("성공 : " + data.Token);
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+		function SignInfoCall()
+		{
+			$.ajax({
+				url: "api/Sign/SignInfo",
+				type: "Get",
+				data: { idUser: 1 },
+				success: function (data)
+				{
+					console.log(data);
+					alert("성공 : " + data.Token);
+					alert(data);
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
