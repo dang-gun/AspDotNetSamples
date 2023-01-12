@@ -1,0 +1,47 @@
+﻿https://code-maze.com/net-core-web-api-ef-core-code-first/
+https://stackoverflow.com/questions/16035333/how-to-delete-and-recreate-from-scratch-an-existing-ef-code-first-database
+
+
+각 DB엔진 별로 마이그레이션을 새로 생성해야 한다.
+(가능하면 별도의 프로젝트를 만들고 거기서 마이그레이션을 생성하는 것이 좋다.)
+
+
+마이그레이션 코드 생성
+띄어쓰기 특수문자 안됨. 네임스페이스 생성 규칙과 같다.
+Add-Migration [마이그레이션 이름]
+
+
+마이그레이션 실행
+update-database
+
+특정 마이그레이션 실행
+update-database [마이그레이션 이름]
+
+마지막 마이그레이션 제거
+Remove-Migration
+
+
+DB 스크립트 생성
+Script-Migration
+
+
+마이그레이션 첫 생성*************************
+Add-Migration Initialize
+
+마이그레이션 오류 찾기*************************
+Add-Migration Initialize -verbose
+
+
+DB 초기화 방법********************************
+주의!!!
+모든 데이터가 날아간다.
+테이블도 날아간다.
+Update-Database -Migration 0
+
+마이그레이션 재작성
+Enable-Migrations
+
+마이그레이션 첫 생성
+Add-Migration Initialize
+
+마이그레이션 첫 생성에서 

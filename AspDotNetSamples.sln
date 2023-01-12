@@ -25,6 +25,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNet_SPA_FallbackTest", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreErrorInvoke", "AspNetCoreErrorInvoke\AspNetCoreErrorInvoke.csproj", "{128A676D-18C5-41BF-9936-954E109AC1B9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi_JwtAuth", "WebApi_JwtAuth\WebApi_JwtAuth.csproj", "{A5387335-8BD7-47F6-8E82-31F8C4A12FF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiPascalCase", "WebApiPascalCase\WebApiPascalCase.csproj", "{A4928EAA-1B71-474C-AE8C-DCF5540D8779}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebpackBreakpointTest", "WebpackBreakpointTest\WebpackBreakpointTest.csproj", "{EA8E30A3-1BAB-4D43-88C9-6757B6479AE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRootSample", "WebRootSample\WebRootSample.csproj", "{6CE9A520-0EA1-4FDD-86D5-A39FB1B102DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_Sqlite|Any CPU = Debug_Sqlite|Any CPU
@@ -86,6 +94,30 @@ Global
 		{128A676D-18C5-41BF-9936-954E109AC1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{128A676D-18C5-41BF-9936-954E109AC1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{128A676D-18C5-41BF-9936-954E109AC1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5387335-8BD7-47F6-8E82-31F8C4A12FF4}.Debug_Sqlite|Any CPU.ActiveCfg = Debug_Sqlite|Any CPU
+		{A5387335-8BD7-47F6-8E82-31F8C4A12FF4}.Debug_Sqlite|Any CPU.Build.0 = Debug_Sqlite|Any CPU
+		{A5387335-8BD7-47F6-8E82-31F8C4A12FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5387335-8BD7-47F6-8E82-31F8C4A12FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5387335-8BD7-47F6-8E82-31F8C4A12FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5387335-8BD7-47F6-8E82-31F8C4A12FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4928EAA-1B71-474C-AE8C-DCF5540D8779}.Debug_Sqlite|Any CPU.ActiveCfg = Debug_Sqlite|Any CPU
+		{A4928EAA-1B71-474C-AE8C-DCF5540D8779}.Debug_Sqlite|Any CPU.Build.0 = Debug_Sqlite|Any CPU
+		{A4928EAA-1B71-474C-AE8C-DCF5540D8779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4928EAA-1B71-474C-AE8C-DCF5540D8779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4928EAA-1B71-474C-AE8C-DCF5540D8779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4928EAA-1B71-474C-AE8C-DCF5540D8779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8E30A3-1BAB-4D43-88C9-6757B6479AE9}.Debug_Sqlite|Any CPU.ActiveCfg = Debug_Sqlite|Any CPU
+		{EA8E30A3-1BAB-4D43-88C9-6757B6479AE9}.Debug_Sqlite|Any CPU.Build.0 = Debug_Sqlite|Any CPU
+		{EA8E30A3-1BAB-4D43-88C9-6757B6479AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8E30A3-1BAB-4D43-88C9-6757B6479AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8E30A3-1BAB-4D43-88C9-6757B6479AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8E30A3-1BAB-4D43-88C9-6757B6479AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CE9A520-0EA1-4FDD-86D5-A39FB1B102DA}.Debug_Sqlite|Any CPU.ActiveCfg = Debug_Sqlite|Any CPU
+		{6CE9A520-0EA1-4FDD-86D5-A39FB1B102DA}.Debug_Sqlite|Any CPU.Build.0 = Debug_Sqlite|Any CPU
+		{6CE9A520-0EA1-4FDD-86D5-A39FB1B102DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CE9A520-0EA1-4FDD-86D5-A39FB1B102DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CE9A520-0EA1-4FDD-86D5-A39FB1B102DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE9A520-0EA1-4FDD-86D5-A39FB1B102DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

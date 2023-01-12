@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ASP.NET Core 6 - Jwt Auth Test</title>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<button onclick="SuccessCall()">무조건 성공</button><br />
+	<br />
+	<br />
+	<input type="text" id="txtSignName" value="test01" />
+	<input type="password" id="txtPassword" value="1111" /><br />
+	<button onclick="SignInCall()">사인 인</button><br />
+	<button onclick="SignOutCall()">사인 아웃(사인 인)</button><br />
+	<br />
+	<button onclick="RegisterCall()">가입</button><br />
+	<br />
+	<br />
+	<button onclick="SignInfoCall()">사인 인포</button><br />
+	<br />
+	<br />
+	<button onclick="RefreshTokenCall()">엑세스 토큰 재요청</button><br />
+	<button onclick="RefreshTokenRevokeCall()">리플레시 토큰 제거</button><br />
+	<button onclick="RefreshTokenRevokeAllCall()">리플레시 토큰 전체 제거(사인 인)</button><br />
+	<script>
+		function SuccessCall()
+		{
+			$.ajax({
+				url: "api/Test/SuccessCall",
+				type: "GET",
+				success: function (data)
+				{
+					console.log(data);
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+
+
+
+		var JwtToken = "";
+		var RefreshToken = "";
+
+
+		function RegisterCall()
+		{
+			let sSignName = $("#txtSignName").val();
+			let sPassword = $("#txtPassword").val();
+
+			if ("" === sSignName)
+			{
+				alert("사인 인 이름을 넣어주세요.");
+				return;
+			}
+			else if ("" === sPassword)
+			{
+				alert("비밀번호를 넣어주세요.");
+				return;
+			}
+
+			$.ajax({
+				url: "api/Sign/Register",
+				type: "Post",
+				data: {
+					sSignName: sSignName,
+					sPassword: sPassword,
+				},
+				success: function (data)
+				{
+					console.log(data);
+
+					if (true === data.Complete)
+					{
+						alert("가입 되었습니다 : " + sSignName);
+					}
+					else
+					{
+						alert(data.Message);
+					}
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+		function SignInCall()
+		{
+			$.ajax({
+				url: "api/Sign/SignIn",
+				type: "PUT",
+				data: {
+					sSignName: $("#txtSignName").val(),
+					sPassword: $("#txtPassword").val(),
+				},
+				success: function (data)
+				{
+					console.log(data);
+					JwtToken = data.AccessToken;
+					RefreshToken = data.RefreshToken;
+					alert("성공 : " + data.AccessToken);
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+		function SignOutCall()
+		{
+			$.ajax({
+				url: "api/Sign/SignOut",
+				type: "PUT",
+				headers: { "Authorization": "bearer " + JwtToken },
+				success: function (data)
+				{
+					console.log(data);
+
+					JwtToken = "";
+					RefreshToken = "";
+
+					alert("성공 : " + data.Complete);
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+		function SignInfoCall()
+		{
+			$.ajax({
+				url: "api/Sign/SignInfo",
+				type: "Get",
+				headers: { "Authorization": "bearer " + JwtToken },
+				data: { idUser: 1 },
+				success: function (data)
+				{
+
+					console.log(data);
+
+					if (true === data.Complete)
+					{
+						alert("성공 : " + data.UserInfo);
+						alert(data);
+					}
+					else
+					{
+						alert("사인 인을해야 볼수 있습니다.");
+					}
+					
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+		function RefreshTokenCall()
+		{
+			$.ajax({
+				url: "api/Sign/RefreshToken",
+				type: "Put",
+				success: function (data)
+				{
+					console.log(data);
+					if (true === data.Complete)
+					{
+						JwtToken = data.AccessToken;
+						RefreshToken = data.RefreshToken;
+
+						alert("갱신 성공!");
+					}
+					else
+					{
+						alert("사인 인을 해주세요");
+					}
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+		function RefreshTokenRevokeCall()
+		{
+			$.ajax({
+				url: "api/Sign/RefreshTokenRevoke",
+				type: "Delete",
+				success: function (data)
+				{
+					console.log(data);
+
+					JwtToken = "";
+					RefreshToken = "";
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+
+		function RefreshTokenRevokeAllCall()
+		{
+			$.ajax({
+				url: "api/Sign/RefreshTokenRevokeAll",
+				type: "Delete",
+				headers: { "Authorization": "bearer " + JwtToken },
+				success: function (data)
+				{
+					console.log(data);
+
+					if (true === Complete)
+					{
+						JwtToken = "";
+						RefreshToken = "";
+					}
+				},
+				error: function (error)
+				{
+					console.log(error);
+
+					alert("알수 없는 오류가 발생했습니다.");
+
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
