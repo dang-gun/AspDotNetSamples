@@ -11,11 +11,9 @@
 	  <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
 	  <SpaProxyServerUrl>http://localhost:9000</SpaProxyServerUrl>
 	  <!--<SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>-->
-	  <!--<SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>-->
+	  <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
 	  
     <ImplicitUsings>enable</ImplicitUsings>
-	  
-    <Configurations>Debug;Release;Debug_Sqlite</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
