@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRootSample", "WebRootSam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspDotNetTest", "AspDotNetTest\AspDotNetTest.csproj", "{CD240248-F87C-4988-AF35-70D9F42F46B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaProxyToNodeTest1", "SpaProxyToNodeTest1\SpaProxyToNodeTest1.csproj", "{67BF8659-FB54-4283-9999-17EFB4DFF257}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaProxyToNodeTest1", "SpaProxyToNodeTest1\SpaProxyToNodeTest1.csproj", "{67BF8659-FB54-4283-9999-17EFB4DFF257}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRWebpack", "SignalRWebpack\SignalRWebpack.csproj", "{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -134,6 +136,12 @@ Global
 		{67BF8659-FB54-4283-9999-17EFB4DFF257}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67BF8659-FB54-4283-9999-17EFB4DFF257}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67BF8659-FB54-4283-9999-17EFB4DFF257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Debug_Sqlite|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Debug_Sqlite|Any CPU.Build.0 = Debug|Any CPU
+		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
