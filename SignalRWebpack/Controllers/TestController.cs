@@ -34,36 +34,76 @@ public class TestController : Controller
         apiresult = StatusCode(200, "성공!");
 
 
-        this.NewMessage();
+        return apiresult;
+    }
+
+    /// <summary>
+    /// 전체에 메시지를 보낸다.
+    /// </summary>
+    /// <param name="sMessage"></param>
+    /// <returns></returns>
+    [HttpGet]
+    public ActionResult MessageAll(string sMessage)
+    {
+        ObjectResult apiresult = new ObjectResult(200);
+
+        apiresult = StatusCode(200, "성공!");
+
+        this.NewMessage(string.Empty, sMessage);
 
         return apiresult;
     }
 
-    private async void NewMessage()
+    /// <summary>
+    /// 지정된 유저에게 메시지를 보낸다.
+    /// </summary>
+    /// <param name="sTo"></param>
+    /// <param name="sMessage"></param>
+    /// <returns></returns>
+    [HttpGet]
+    public ActionResult MessageTo(string sTo, string sMessage)
     {
-        
-        
-        //string sSendModel 
-        //    = JsonConvert.SerializeObject(new SignalRSendModel()
-        //        {
-        //            Sender = "Server"
-        //            , To = ""
-        //            , Command = "MsgSend"
-        //            , Message = "메시지닷!"
-        //        });
+        ObjectResult apiresult = new ObjectResult(200);
 
-        //await this._hubContext
-        //    .Clients
-        //    .All
-        //    .SendAsync("ReceiveMessage", sSendModel);
+        apiresult = StatusCode(200, "성공!");
 
-        await this._ChatHubContext.SendUser_All(new SignalRSendModel()
+        this.NewMessage(sTo, sMessage);
+
+        return apiresult;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sTo"></param>
+    /// <param name="sMessage"></param>
+    private async void NewMessage(string sTo, string sMessage)
+    {
+        if(string.Empty == sTo)
+        {
+            await this._ChatHubContext.SendUser_All(
+                new SignalRSendModel()
                 {
                     Sender = "Server"
                     , To = ""
                     , Command = "MsgSend"
-                    , Message = "메시지닷!"
+                    , Message = sMessage
                 });
+        }
+        else
+        {
+            await this._ChatHubContext.SendUser_Name(
+                sTo
+                , new SignalRSendModel()
+                {
+                    Sender = "Server"
+                    , To = ""
+                    , Command = "MsgSend"
+                    , Message = sMessage
+                });
+        }
+
+        
     }
 
 
