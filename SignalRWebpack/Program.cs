@@ -48,6 +48,11 @@ namespace SignalRWebpack
             // UseCors must be called before MapHub.
             app.UseCors();
             app.MapHub<ChatHub>("/chatHub");
+            //
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapHub<ChatHub>("/chatHub");
+            //});
 
             app.MapControllers();
 
