@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaProxyToNodeTest1", "SpaP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRWebpack", "SignalRWebpack\SignalRWebpack.csproj", "{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebpackSslTest", "WebpackSslTest\WebpackSslTest.csproj", "{1E3F57BC-C699-4103-81E5-8F1E77F681BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_Sqlite|Any CPU = Debug_Sqlite|Any CPU
@@ -142,6 +144,12 @@ Global
 		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82DE3A9A-C6BF-401E-89AA-D78BAF18E65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E3F57BC-C699-4103-81E5-8F1E77F681BE}.Debug_Sqlite|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E3F57BC-C699-4103-81E5-8F1E77F681BE}.Debug_Sqlite|Any CPU.Build.0 = Debug|Any CPU
+		{1E3F57BC-C699-4103-81E5-8F1E77F681BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E3F57BC-C699-4103-81E5-8F1E77F681BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E3F57BC-C699-4103-81E5-8F1E77F681BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E3F57BC-C699-4103-81E5-8F1E77F681BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,15 +8,28 @@ namespace SignalRWebpack
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddSignalR();
 
+
+            //시그널R 설정
+            //.AddControllers보다 앞에 와야 한다.
+            builder.Services.AddSignalR();
+            //시그널R 설정 CORS 설정
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
                     builder =>
                     {
                         //builder.WithOrigins("http://localhost:7282")
-                        builder.WithOrigins("http://localhost:9500")
+                        builder.WithOrigins("https://localhost:9500")
+                            .AllowAnyHeader()
+                            .WithMethods("GET", "POST")
+                            .AllowCredentials();
+                    });
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        //builder.WithOrigins("http://localhost:7282")
+                        builder.WithOrigins("https://localhost:9501")
                             .AllowAnyHeader()
                             .WithMethods("GET", "POST")
                             .AllowCredentials();
@@ -45,8 +58,12 @@ namespace SignalRWebpack
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
-            // UseCors must be called before MapHub.
+            //https로 자동 리디렉션
+            app.UseHttpsRedirection();
+
+            // MapHub 보다 앞에 와야 한다.
             app.UseCors();
+            //MapControllers 보다 앞에 와야 한다.
             app.MapHub<ChatHub>("/chatHub");
             //
             //app.UseEndpoints(endpoints =>
