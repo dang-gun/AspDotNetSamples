@@ -6,14 +6,22 @@ using System.Diagnostics;
 
 namespace SignalRWebpack.Hubs;
 
+/// <summary>
+/// 체팅 허브
+/// </summary>
+/// <remarks>
+/// 시그널R의 동작을 구현한다.
+/// </remarks>
 public class ChatHub : Hub
 {
-    
     public ChatHub()
     {
     }
 
-
+    /// <summary>
+    /// 유저 접속 처리
+    /// </summary>
+    /// <returns></returns>
     public override Task OnConnectedAsync()
     {
         //Guid로 id를 생성할 필요가 없다. 
