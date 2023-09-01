@@ -1,5 +1,6 @@
 ﻿const fs = require('fs');
-const spawn = require('child_process').spawn;
+//const spawn = require('child_process').spawn;
+const spawnSync = require('child_process').spawnSync;
 const path = require('path');
 
 const crypto = require('crypto');
@@ -34,7 +35,11 @@ function aspnetcore_https()
 
     if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath))
     {
-        spawn('dotnet', [
+        //프로젝트 설정에 따라 비동기로 동작하는 경우가 있어
+        //spawnSync로 변경
+        //윈도우에서는 shell: true 옵션이 없는경우 동작하지 않는 경우가 있어 추가함
+        //spawn('dotnet', [
+        spawnSync('dotnet', [
             'dev-certs',
             'https',
             '--export-path',
@@ -42,7 +47,8 @@ function aspnetcore_https()
             '--format',
             'Pem',
             '--no-password',
-        ], { stdio: 'inherit', })
+        //], { stdio: 'inherit', })
+        ], { stdio: 'inherit', shell: true })
             .on('exit', (code) => { });
     }
 }
