@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebpackSslTest", "WebpackSs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactTest", "ReactTest\ReactTest.csproj", "{4B4BE9D2-4702-4E21-9290-602939FC4961}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore6Defult", "AspNetCore6Defult\AspNetCore6Defult.csproj", "{CC0601BC-A644-434A-8928-F3083A027C55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_Sqlite|Any CPU = Debug_Sqlite|Any CPU
@@ -158,6 +160,12 @@ Global
 		{4B4BE9D2-4702-4E21-9290-602939FC4961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B4BE9D2-4702-4E21-9290-602939FC4961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B4BE9D2-4702-4E21-9290-602939FC4961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC0601BC-A644-434A-8928-F3083A027C55}.Debug_Sqlite|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0601BC-A644-434A-8928-F3083A027C55}.Debug_Sqlite|Any CPU.Build.0 = Debug|Any CPU
+		{CC0601BC-A644-434A-8928-F3083A027C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0601BC-A644-434A-8928-F3083A027C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC0601BC-A644-434A-8928-F3083A027C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC0601BC-A644-434A-8928-F3083A027C55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +178,7 @@ Global
 		{B1373353-1EB2-4DBB-A1B8-EEF5FF3647F2} = {3779FFCB-D1CA-46F7-8C4C-99439B2613F3}
 		{9D2E62A8-A06B-4E67-978D-B8227F1BFE36} = {3779FFCB-D1CA-46F7-8C4C-99439B2613F3}
 		{67BF8659-FB54-4283-9999-17EFB4DFF257} = {3779FFCB-D1CA-46F7-8C4C-99439B2613F3}
+		{CC0601BC-A644-434A-8928-F3083A027C55} = {46BF1C30-6C0E-4D2A-B93B-3C0C707DFAA0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B2171B6-8809-422D-B966-F677A6063EC2}
